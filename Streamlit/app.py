@@ -38,7 +38,7 @@ doc_file = st.file_uploader("Choose a DOC file", type=['doc', 'docx'])
 
 
 if doc_file is not None:
-    output_path = convert_file(uploaded_file)
+    output_path = convert_file(doc_file)
             
     with open(output_path, "r", encoding="utf-8", errors="ignore") as file:
         text = file.read()
