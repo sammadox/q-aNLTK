@@ -10,9 +10,9 @@ load_dotenv('.env')  # Adjust the path if your .env file is located elsewhere
 def send_chat_message(messages):
     # Initialize the client using environment variables
     client = AzureOpenAI(
-        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-        api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT'")
+        api_key=os.getenv("724a9bfec68944fca09eaeb995b7014e"),
+        api_version=os.getenv("2024-02-01"),
+        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
     )
 
     response = client.chat.completions.create(
