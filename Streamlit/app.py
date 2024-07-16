@@ -73,7 +73,7 @@ if doc_file is not None:
                             print(relevant_info)
                             st.write("Relevant information found:", relevant_info)
                             relevant_text+=sentence+' '
-                            answers+=answer(user_input,sentence).choices[0].message.content
+                            answers=answers+' '+answer(user_input,sentence).choices[0].message.content
                             print('_______________'+answers)
                             if len(relevant_text)>1000:
                                 break
