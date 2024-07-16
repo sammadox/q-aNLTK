@@ -36,7 +36,11 @@ st.title('DOC to Text Converter and NLTK Processor')
 
 doc_file = st.file_uploader("Choose a DOC file", type=['doc', 'docx'])
 
+
 if doc_file is not None:
+    output_path = convert_file(doc_file)
+    with open(output_path, "r", encoding="utf-8", errors="ignore") as file:
+                file_content = file.read()
     # Save the uploaded file to a temporary path
     with open(doc_file.name, "wb") as f:
         f.write(doc_file.getbuffer())
