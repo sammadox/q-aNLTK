@@ -74,11 +74,11 @@ if doc_file is not None:
                             st.write("Relevant information found:", relevant_info)
                             relevant_text+=sentence+' '
                             answers+=answer(user_input,sentence).choices[0].message.content
-                            print(answers)
+                            print('_______________'+answers)
                             if len(relevant_text)>1000:
                                 break
                 print(relevant_text)
-                st.text_area("answer",answers, height=300)
+                st.write("Answers:", answers)
             except Exception as e:
                 st.error(f"An error occurred during text processing: {e}")
         
