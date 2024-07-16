@@ -13,7 +13,7 @@ ensure_nltk_data()
 # Set your ConvertAPI secret
 convertapi.api_secret = 'UVJ2EbZ5ei63xEdu'
 
-def doc_to_text(doc_path):
+def convert_file(doc_path):
     # Save the uploaded file to a temporary location
     temp_file_path = Path("/tmp") / doc_path.name
     with open(temp_file_path, "wb") as f:
@@ -38,15 +38,11 @@ doc_file = st.file_uploader("Choose a DOC file", type=['doc', 'docx'])
 
 
 if doc_file is not None:
-    output_path = convert_file(doc_file)
-    with open(output_path, "r", encoding="utf-8", errors="ignore") as file:
-                file_content = file.read()
-    # Save the uploaded file to a temporary path
-    with open(doc_file.name, "wb") as f:
-        f.write(doc_file.getbuffer())
-    
-    # Convert the DOC to text
-    text = doc_to_text(doc_file.name)
+    output_path = convert_file(uploaded_file)
+            st.success('Conversion to txt...')
+            
+            with open(output_path, "r", encoding="utf-8", errors="ignore") as file:
+                text = file.read()
     
     if text:
         # Display the extracted text in a textbox
