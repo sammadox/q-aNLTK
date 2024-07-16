@@ -86,6 +86,4 @@ if doc_file is not None:
     else:
         st.error("Failed to extract text. Please check the document format and try again.")
 
-# Clean up the temporary file
-if doc_file is not None:
-    os.remove(doc_file.name)
+
