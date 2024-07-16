@@ -1,11 +1,6 @@
 import os
 from openai import AzureOpenAI
 
-# Load environment variables from a .env file
-from dotenv import load_dotenv
-load_dotenv('.env')  # Adjust the path if your .env file is located elsewhere
-
-
 
 def send_chat_message(messages):
     # Initialize the client using environment variables
