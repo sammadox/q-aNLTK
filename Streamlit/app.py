@@ -1,7 +1,7 @@
 import streamlit as st
-import win32com.client
+
 import os
-import pythoncom
+
 from txtchunking import chunk_text, flatten_chunked_sentences, ensure_nltk_data
 from messages_operations import HasInfo, answer
 import convertapi
