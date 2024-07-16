@@ -78,7 +78,7 @@ if doc_file is not None:
                             if len(relevant_text)>1000:
                                 break
                 print(relevant_text)
-                st.text_area(answers, height=300)
+                st.text_area("answer",answers, height=300)
             except Exception as e:
                 st.error(f"An error occurred during text processing: {e}")
         
