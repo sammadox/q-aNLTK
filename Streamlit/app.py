@@ -66,19 +66,19 @@ if doc_file is not None:
                         hasinfo = HasInfo(user_input, sentence).choices[0].message.content
                         relevant_info=''
                         print(hasinfo)
-                        L=[]
+                        answers=''
                         if 'Yes' in hasinfo or 'yes' in hasinfo:
                             relevant_info=''
                             relevant_info = sentence
                             print(relevant_info)
                             st.write("Relevant information found:", relevant_info)
                             relevant_text+=sentence+' '
-                            L.append(answer(user_input,sentence).choices[0].message.content)
+                            answers+=answer(user_input,sentence).choices[0].message.content
                             print(L)
                             if len(relevant_text)>1000:
                                 break
                 print(relevant_text)
-                st.text_area(L, height=300)
+                st.text_area(answers, height=300)
             except Exception as e:
                 st.error(f"An error occurred during text processing: {e}")
         
